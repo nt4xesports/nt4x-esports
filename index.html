@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090909">
-
   <meta name="description" content="NT4X Esports — Next Tier 4 Excellence. We don't chase the next tier. We create it.">
-
   <title>NT4X Esports | Official Website</title>
-
   <style>
     :root {
       --red: #ed1c24;
@@ -19,514 +15,100 @@
       --muted: #a5a5a5;
       --line: #292929;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1100px, 90%);
-      margin: 0 auto;
-    }
-
-    /* NAVIGATION */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9, 9, 9, 0.97);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-
-    nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
-    .brand span {
-      color: var(--red);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-
-    .nav-links a {
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--red);
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 540px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(
-          ellipse at 85% 45%,
-          rgba(237, 28, 36, 0.22),
-          transparent 42%
-        ),
-        linear-gradient(115deg, #090909 45%, #18090a 100%);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero::after {
-      content: "NT4X";
-      position: absolute;
-      right: -20px;
-      bottom: -45px;
-      font-size: clamp(140px, 27vw, 310px);
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.025);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: 85px 0;
-    }
-
-    .eyebrow,
-    .section-label {
-      color: var(--red);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      font-size: clamp(55px, 10vw, 100px);
-      line-height: 1;
-      letter-spacing: -3px;
-      margin: 22px 0;
-      font-weight: 900;
-    }
-
-    h1 span {
-      color: var(--red);
-    }
-
-    .tagline {
-      color: var(--white);
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1.4px;
-      margin-bottom: 20px;
-    }
-
-    .hero-description {
-      max-width: 590px;
-      color: #c4c4c4;
-      font-size: 15px;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 46px;
-      padding: 12px 21px;
-      border: 1px solid var(--red);
-      background: transparent;
-      color: var(--white);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-align: center;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--red);
-      color: #fff;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #fff;
-      color: #090909;
-      border-color: #fff;
-    }
-
-    /* GENERAL SECTIONS */
-
-    section {
-      padding: 82px 0;
-    }
-
-    h2 {
-      font-size: clamp(30px, 5vw, 45px);
-      line-height: 1.2;
-      margin: 12px 0 22px;
-      font-weight: 800;
-    }
-
-    .section-intro {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-mark {
-      min-height: 250px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #3b1719;
-      background: linear-gradient(135deg, #170b0c, #101010);
-    }
-
-    .about-mark strong {
-      display: block;
-      font-size: clamp(55px, 9vw, 90px);
-      line-height: 1.1;
-      letter-spacing: -4px;
-    }
-
-    .about-mark strong span {
-      color: var(--red);
-    }
-
-    .about-mark small {
-      display: block;
-      margin-top: 12px;
-      text-align: center;
-      font-size: 9px;
-      letter-spacing: 3px;
-      color: #aaa;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .stat {
-      min-width: 0;
-      border-top: 2px solid var(--red);
-      padding: 17px 12px;
-      background: var(--panel);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 20px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    /* ACHIEVEMENTS */
-
-    .achievements {
-      background: #0e0e0e;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 35px;
-    }
-
-    .card {
-      padding: 28px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .card:hover {
-      border-color: var(--red);
-      transform: translateY(-3px);
-    }
-
-    .card-number {
-      color: var(--red);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .card h3 {
-      font-size: 20px;
-      line-height: 1.4;
-      margin: 13px 0 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .status {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 5px 9px;
-      border: 1px solid #522124;
-      color: #ff777b;
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    /* ROSTER */
-
-    .roster-box {
-      margin-top: 30px;
-      padding: 38px 24px;
-      text-align: center;
-      background: var(--panel);
-      border: 1px dashed #4b292a;
-    }
-
-    .roster-box h3 {
-      font-size: 21px;
-    }
-
-    .roster-box p {
-      max-width: 520px;
-      margin: 12px auto 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* SOCIAL MEDIA */
-
-    .contact {
-      text-align: center;
-      background:
-        radial-gradient(
-          ellipse at 50% 100%,
-          rgba(237, 28, 36, 0.13),
-          transparent 65%
-        ),
-        #090909;
-    }
-
-    .contact .section-intro {
-      margin: 0 auto;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .social-links .btn {
-      min-width: 145px;
-    }
-
-    .social-note {
-      margin-top: 25px;
-      color: #888;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 25px 0;
-      border-top: 1px solid var(--line);
-      color: #888;
-      font-size: 11px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .footer-content strong {
-      color: var(--white);
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    .footer-tagline {
-      max-width: 350px;
-    }
-
-    /* TABLET AND MOBILE */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { background: var(--black); color: var(--white); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 90%); margin: 0 auto; }
+
+    header { position: sticky; top: 0; z-index: 100; background: rgba(9,9,9,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    nav { min-height: 76px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { font-size: 24px; font-weight: 900; letter-spacing: 1px; white-space: nowrap; }
+    .red-four { color: var(--red); }
+    .nav-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; font-weight: bold; letter-spacing: .5px; }
+    .nav-links a:hover { color: var(--red); }
+
+    .hero { min-height: 540px; display: flex; align-items: center; position: relative; overflow: hidden; background: radial-gradient(ellipse at 85% 45%, rgba(237,28,36,.22), transparent 42%), linear-gradient(115deg,#090909 45%,#18090a 100%); border-bottom: 1px solid var(--line); }
+    .hero::after { content: "NT4X"; position: absolute; right: -20px; bottom: -45px; font-size: clamp(140px,27vw,310px); font-weight: 900; color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; padding: 85px 0; }
+    .eyebrow, .section-label { color: var(--red); font-size: 11px; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; }
+    h1 { font-size: clamp(55px,10vw,100px); line-height: 1; letter-spacing: -3px; margin: 22px 0; font-weight: 900; }
+    .tagline { color: var(--white); font-size: 13px; font-weight: bold; letter-spacing: 1.4px; margin-bottom: 20px; }
+    .hero-description { max-width: 590px; color: #c4c4c4; font-size: 15px; margin-bottom: 30px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; min-height: 46px; padding: 12px 21px; border: 1px solid var(--red); background: transparent; color: var(--white); font-size: 11px; font-weight: bold; letter-spacing: 1px; text-align: center; transition: .2s ease; cursor: pointer; }
+    .btn-primary { background: var(--red); color: #fff; }
+    .btn:hover { transform: translateY(-2px); background: #fff; color: #090909; border-color: #fff; }
+
+    section { padding: 82px 0; }
+    h2 { font-size: clamp(30px,5vw,45px); line-height: 1.2; margin: 12px 0 22px; font-weight: 800; }
+    .section-intro { max-width: 650px; color: var(--muted); font-size: 14px; }
+
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 45px; align-items: center; }
+    .about-mark { min-height: 250px; display: grid; place-items: center; border: 1px solid #3b1719; background: linear-gradient(135deg,#170b0c,#101010); }
+    .about-mark strong { display: block; font-size: clamp(55px,9vw,90px); line-height: 1.1; letter-spacing: -4px; }
+    .about-mark small { display: block; margin-top: 12px; text-align: center; font-size: 9px; letter-spacing: 3px; color: #aaa; }
+    .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 30px; }
+    .stat { min-width: 0; border-top: 2px solid var(--red); padding: 17px 12px; background: var(--panel); }
+    .stat strong { display: block; font-size: 20px; }
+    .stat span { color: var(--muted); font-size: 10px; }
+
+    .achievements { background: #0e0e0e; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .cards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 35px; }
+    .card { padding: 28px; background: var(--panel); border: 1px solid var(--line); transition: border-color .2s,transform .2s; }
+    .card:hover { border-color: var(--red); transform: translateY(-3px); }
+    .card-number { color: var(--red); font-size: 11px; font-weight: bold; letter-spacing: 2px; }
+    .card h3 { font-size: 20px; line-height: 1.4; margin: 13px 0 10px; }
+    .card p { color: var(--muted); font-size: 13px; }
+    .status { display: inline-block; margin-top: 20px; padding: 5px 9px; border: 1px solid #522124; color: #ff777b; font-size: 10px; font-weight: bold; letter-spacing: 1px; }
+
+    .roster-box { margin-top: 30px; padding: 38px 24px; text-align: center; background: var(--panel); border: 1px dashed #4b292a; }
+    .roster-box h3 { font-size: 21px; }
+    .roster-box p { max-width: 520px; margin: 12px auto 0; color: var(--muted); font-size: 13px; }
+
+    .contact { text-align: center; background: radial-gradient(ellipse at 50% 100%,rgba(237,28,36,.13),transparent 65%),#090909; }
+    .contact .section-intro { margin: 0 auto; }
+    .social-links { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 30px; }
+    .social-icon { width: 58px; height: 58px; display: inline-flex; justify-content: center; align-items: center; border: 1px solid #3b2526; border-radius: 12px; background: #121212; color: var(--white); transition: transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease; }
+    .social-icon svg { width: 27px; height: 27px; display: block; fill: currentColor; }
+    .social-icon:hover { transform: translateY(-4px); background: var(--red); border-color: var(--red); color: #fff; }
+    .social-icon:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
+    .social-note { margin-top: 25px; color: #888; font-size: 10px; letter-spacing: 1.5px; }
+
+    footer { padding: 25px 0; border-top: 1px solid var(--line); color: #888; font-size: 11px; }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .footer-content strong { color: var(--white); font-size: 14px; letter-spacing: 1px; }
+    .footer-tagline { max-width: 350px; }
 
     @media (max-width: 760px) {
-      nav {
-        padding: 14px 0;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .nav-links {
-        gap: 13px;
-        font-size: 11px;
-      }
-
-      .hero {
-        min-height: 470px;
-      }
-
-      .hero-content {
-        padding: 65px 0;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .about-mark {
-        min-height: 210px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 62px 0;
-      }
-
-      .social-links {
-        gap: 10px;
-      }
-
-      .social-links .btn {
-        flex: 1 1 135px;
-        max-width: 220px;
-        min-width: 0;
-        padding: 12px 10px;
-        font-size: 10px;
-      }
+      nav { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 12px; }
+      .nav-links { gap: 13px; font-size: 11px; }
+      .hero { min-height: 470px; }
+      .hero-content { padding: 65px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about-mark { min-height: 210px; }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 62px 0; }
+      .social-links { gap: 12px; }
+      .social-icon { width: 54px; height: 54px; }
     }
-
     @media (max-width: 380px) {
-      .container {
-        width: 92%;
-      }
-
-      .brand {
-        font-size: 21px;
-      }
-
-      .nav-links {
-        gap: 10px;
-        font-size: 10px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .tagline {
-        font-size: 11px;
-        letter-spacing: 0.7px;
-      }
-
-      .stats {
-        gap: 7px;
-      }
-
-      .stat {
-        padding: 13px 8px;
-      }
-
-      .stat strong {
-        font-size: 17px;
-      }
-
-      .stat span {
-        font-size: 9px;
-      }
+      .container { width: 92%; }
+      .brand { font-size: 21px; }
+      .nav-links { gap: 10px; font-size: 10px; }
+      h1 { letter-spacing: -2px; }
+      .tagline { font-size: 11px; letter-spacing: .7px; }
+      .stats { gap: 7px; }
+      .stat { padding: 13px 8px; }
+      .stat strong { font-size: 17px; }
+      .stat span { font-size: 9px; }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- HEADER -->
   <header>
     <nav class="container">
-      <a href="#home" class="brand">
-        NT<span>4X</span> ESPORTS
-      </a>
-
+      <a href="#home" class="brand">NT<span class="red-four">4</span>X ESPORTS</a>
       <div class="nav-links">
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
@@ -538,56 +120,29 @@
   </header>
 
   <main>
-
-    <!-- HOME -->
     <section class="hero" id="home">
       <div class="container hero-content">
-
-        <div class="eyebrow">
-          OFFICIAL ESPORTS ORGANIZATION
-        </div>
-
-        <h1>
-          WE ARE<br>
-          NT<span>4X</span>
-        </h1>
-
-        <p class="tagline">
-          WE DON'T CHASE THE NEXT TIER. WE CREATE IT.
-        </p>
-
+        <div class="eyebrow">OFFICIAL ESPORTS ORGANIZATION</div>
+        <h1>WE ARE<br>NT<span class="red-four">4</span>X</h1>
+        <p class="tagline">WE DON'T CHASE THE NEXT TIER. WE CREATE IT.</p>
         <p class="hero-description">
           Built on ambition, discipline and competition.
           NT4X Esports is focused on competitive gaming,
           teamwork and building a stronger esports presence.
           Every match is another step forward.
         </p>
-
         <div class="buttons">
-          <a href="#achievements" class="btn btn-primary">
-            OUR ACHIEVEMENTS
-          </a>
-
-          <a href="#about" class="btn">
-            DISCOVER NT4X
-          </a>
+          <a href="#achievements" class="btn btn-primary">OUR ACHIEVEMENTS</a>
+          <a href="#about" class="btn">DISCOVER NT4X</a>
         </div>
-
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="container about-grid">
-
         <div>
           <div class="section-label">WHO WE ARE</div>
-
-          <h2>
-            Built to Compete.<br>
-            Driven to Excel.
-          </h2>
-
+          <h2>Built to Compete.<br>Driven to Excel.</h2>
           <p class="section-intro">
             NT4X stands for Next Tier 4 Excellence.
             We are an esports team committed to teamwork,
@@ -596,124 +151,75 @@
             built match by match, with our eyes on the
             next challenge.
           </p>
-
           <div class="stats">
-            <div class="stat">
-              <strong>NT4X</strong>
-              <span>OUR IDENTITY</span>
-            </div>
-
-            <div class="stat">
-              <strong>PUBG</strong>
-              <span>CORE TITLE</span>
-            </div>
-
-            <div class="stat">
-              <strong>2021</strong>
-              <span>TEAM JOURNEY</span>
-            </div>
+            <div class="stat"><strong>NT4X</strong><span>OUR IDENTITY</span></div>
+            <div class="stat"><strong>PUBG</strong><span>CORE TITLE</span></div>
+            <div class="stat"><strong>2021</strong><span>TEAM JOURNEY</span></div>
           </div>
         </div>
-
-        <!-- TEMPORARY TEXT MARK, NOT THE OFFICIAL LOGO -->
+        <!-- Temporary text mark, not the official logo -->
         <div class="about-mark">
           <div>
-            <strong>NT<span>4X</span></strong>
+            <strong>NT<span class="red-four">4</span>X</strong>
             <small>NEXT TIER 4 EXCELLENCE</small>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ACHIEVEMENTS -->
     <section class="achievements" id="achievements">
       <div class="container">
-
         <div class="section-label">OUR JOURNEY</div>
-
         <h2>Achievements</h2>
-
         <p class="section-intro">
           Every result is part of our competitive journey.
           We continue to compete, improve and pursue new
           milestones in esports.
         </p>
-
         <div class="cards">
-
           <article class="card">
-            <div class="card-number">
-              01 / CHAMPIONS
-            </div>
-
+            <div class="card-number">01 / CHAMPIONS</div>
             <h3>SQUADZONE TDM 2v2</h3>
-
             <p>
               NT4X Esports secured the championship for the
               third time, achieving a second consecutive
               title in the competition.
             </p>
-
             <span class="status">CHAMPIONS</span>
           </article>
-
           <article class="card">
-            <div class="card-number">
-              02 / QUALIFICATION
-            </div>
-
+            <div class="card-number">02 / QUALIFICATION</div>
             <h3>PUBG Tournament — Group Stage</h3>
-
             <p>
               NT4X advanced from Stage 1 qualification to
               the group stage, finishing 8th with 17 points.
             </p>
-
-            <span class="status">
-              GROUP STAGE QUALIFIED
-            </span>
+            <span class="status">GROUP STAGE QUALIFIED</span>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ROSTER -->
     <section id="roster">
       <div class="container">
-
         <div class="section-label">THE TEAM</div>
-
         <h2>Our Roster</h2>
-
-        <p class="section-intro">
-          Meet the players representing NT4X Esports.
-        </p>
-
+        <p class="section-intro">Meet the players representing NT4X Esports.</p>
         <div class="roster-box">
           <h3>Official Roster Updates</h3>
-
           <p>
-            Player profiles, in-game names and competitive
-            roles will be published here when the official
-            roster presentation is ready.
+            Player profiles, in-game names and competitive roles
+            will be published here when the official roster
+            presentation is ready.
           </p>
         </div>
-
       </div>
     </section>
 
-    <!-- OFFICIAL SOCIAL MEDIA -->
     <section class="contact" id="contact">
       <div class="container">
-
-        <div class="section-label">
-          OFFICIAL CHANNELS
-        </div>
-
+        <div class="section-label">OFFICIAL CHANNELS</div>
         <h2>CONNECT WITH NT4X</h2>
-
         <p class="section-intro">
           Follow NT4X Esports for official announcements,
           tournament results, match updates and exclusive
@@ -721,70 +227,42 @@
         </p>
 
         <div class="social-links">
-
-          <a
-            class="btn btn-primary"
-            href="https://www.instagram.com/nt4xesports?exln=MXB4N3FlM21zNXIxYg=="
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            INSTAGRAM
+          <a class="social-icon" href="https://www.instagram.com/nt4xesports?exln=MXB4N3FlM21zNXIxYg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.3-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/>
+            </svg>
           </a>
 
-          <a
-            class="btn"
-            href="https://youtube.com/@nt4xesports?si=d8Tklz0LD0wvuOBV"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            YOUTUBE
+          <a class="social-icon" href="https://youtube.com/@nt4xesports?si=d8Tklz0LD0wvuOBV" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+            </svg>
           </a>
 
-          <a
-            class="btn"
-            href="https://discord.gg/b323h7CHEZ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            JOIN DISCORD
+          <a class="social-icon" href="https://discord.gg/b323h7CHEZ" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.7 5.3A19 19 0 0 0 15 3.8l-.6 1.3a17 17 0 0 0-4.8 0L9 3.8a19 19 0 0 0-4.7 1.5C1.3 9.7.5 14 .9 18.2A19 19 0 0 0 6.7 21l1.2-2a12 12 0 0 1-1.9-.9l.5-.4c3.7 1.7 7.7 1.7 11.3 0l.5.4a12 12 0 0 1-1.9.9l1.2 2a19 19 0 0 0 5.8-2.8c.5-4.9-.8-9.1-3.7-12.9ZM8.8 15.3c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm6.4 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"/>
+            </svg>
           </a>
 
-          <a
-            class="btn"
-            href="https://www.facebook.com/share/19sgKAQudq/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            FACEBOOK
+          <a class="social-icon" href="https://www.facebook.com/share/19sgKAQudq/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2v-2c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21h3.4Z"/>
+            </svg>
           </a>
-
         </div>
 
-        <p class="social-note">
-          OFFICIAL NT4X ESPORTS COMMUNITY
-        </p>
-
+        <p class="social-note">OFFICIAL NT4X ESPORTS COMMUNITY</p>
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container footer-content">
-
       <strong>NT4X ESPORTS</strong>
-
-      <span class="footer-tagline">
-        WE DON'T CHASE THE NEXT TIER. WE CREATE IT.
-      </span>
-
-      <span>
-        &copy; 2026 NT4X Esports
-      </span>
-
+      <span class="footer-tagline">WE DON'T CHASE THE NEXT TIER. WE CREATE IT.</span>
+      <span>&copy; 2026 NT4X Esports</span>
     </div>
   </footer>
-
 </body>
 </html>
