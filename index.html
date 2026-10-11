@@ -104,6 +104,129 @@ footer p{font-size:11px}
  .stats{grid-template-columns:1fr}
  .hero h1{font-size:64px}
 }
+ 
+/* NT4X ESPORTS — Expandable Roster Cards */
+.roster-grid {
+  align-items: start;
+}
+
+.player.expand-player {
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(155deg, #17171d, #09090c 75%);
+  border: 1px solid rgba(239, 35, 60, 0.28);
+  border-radius: 12px;
+  transition: border-color .25s ease, transform .25s ease;
+}
+
+.player.expand-player:hover,
+.player.expand-player[open] {
+  border-color: #ef233c;
+  transform: translateY(-2px);
+}
+
+.player.expand-player summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.player.expand-player summary::-webkit-details-marker {
+  display: none;
+}
+
+.player-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  background: #111116;
+}
+
+.player-card-info {
+  padding: 15px;
+}
+
+.player-card-info h3 {
+  margin: 7px 0;
+}
+
+.player-card-info .role {
+  margin-bottom: 0;
+}
+
+.player-click-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 13px;
+  color: #ef233c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.player-click-hint span:last-child {
+  font-size: 18px;
+  transition: transform .2s ease;
+}
+
+.player.expand-player[open] .player-click-hint span:last-child {
+  transform: rotate(180deg);
+}
+
+.player-profile {
+  padding: 0 15px 17px;
+  border-top: 1px solid rgba(239, 35, 60, .3);
+  animation: rosterReveal .25s ease;
+}
+
+.player-profile h4 {
+  margin: 15px 0 8px;
+  color: #ef233c;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.player-profile p {
+  color: #c5c5ce;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 8px 0;
+}
+
+.player-profile .profile-role {
+  color: #fff;
+  font-weight: 700;
+}
+
+.profile-stat-label {
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  padding: 6px 9px;
+  border: 1px solid #383840;
+  border-radius: 5px;
+  color: #ddd;
+  font-size: 10px;
+}
+
+@keyframes rosterReveal {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .player-card-info {
+    padding: 11px;
+  }
+
+  .player-profile {
+    padding: 0 11px 14px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -193,36 +316,133 @@ footer p{font-size:11px}
   </div>
   <p style="margin-top:-20px;margin-bottom:25px;font-size:12px">OFFICIAL MAIN ROSTER · PUBG MOBILE</p>
   <div class="roster-grid">
-   <article class="player leader">
-    <div class="player-top"><span>PLAYER 01 / 06</span><span class="badge">FOUNDER</span></div>
-    <div class="initial">ZERO</div><h3>NT4X ZERO</h3>
-    <div class="role">Founder &amp; Team Leader · IGL</div>
-   </article>
-   <article class="player">
-    <div class="player-top"><span>PLAYER 02 / 06</span><span class="badge">ATTACK</span></div>
-    <div class="initial">SULTAN</div><h3>NT4X SULTAN</h3>
-    <div class="role">Fragger</div>
-   </article>
-   <article class="player">
-    <div class="player-top"><span>PLAYER 03 / 06</span><span class="badge">UTILITY</span></div>
-    <div class="initial">VIP</div><h3>NT4X VIP</h3>
-    <div class="role">Support</div>
-   </article>
-   <article class="player">
-    <div class="player-top"><span>PLAYER 04 / 06</span><span class="badge">ATTACK</span></div>
-    <div class="initial">KASIER</div><h3>NT4X KASIER</h3>
-    <div class="role">Fragger</div>
-   </article>
-   <article class="player">
-    <div class="player-top"><span>PLAYER 05 / 06</span><span class="badge">ATTACK</span></div>
-    <div class="initial">EREN</div><h3>NT4X EREN</h3>
-    <div class="role">Fragger</div>
-   </article>
-   <article class="player">
-    <div class="player-top"><span>PLAYER 06 / 06</span><span class="badge">ATTACK</span></div>
-    <div class="initial">JANGI</div><h3>NT4X JANGI</h3>
-    <div class="role">Fragger</div>
-   </article>
+   
+<details class="player expand-player leader">
+  <summary>
+    <div class="player-top">
+      <span>PLAYER 01 / 06</span><span class="badge">FOUNDER</span>
+    </div>
+    <img class="player-photo" src="zero.png" alt="NT4X ZERO" loading="lazy">
+    <div class="player-card-info">
+      <h3>NT4X ZERO</h3>
+      <div class="role">Founder &amp; Team Leader · IGL</div>
+      <div class="player-click-hint"><span>VIEW PROFILE</span><span>⌄</span></div>
+    </div>
+  </summary>
+  <div class="player-profile">
+    <h4>PLAYER PROFILE</h4>
+    <p class="profile-role">Founder · Team Leader · In-Game Leader</p>
+    <p>Founder of NT4X ESPORTS, responsible for team leadership, in-game direction and coordinating the squad.</p>
+    <span class="profile-stat-label">PUBG MOBILE</span>
+    <span class="profile-stat-label">IGL</span>
+  </div>
+</details>
+
+<details class="player expand-player">
+  <summary>
+    <div class="player-top">
+      <span>PLAYER 02 / 06</span><span class="badge">ATTACK</span>
+    </div>
+    <img class="player-photo" src="sultan.png" alt="NT4X SULTAN" loading="lazy">
+    <div class="player-card-info">
+      <h3>NT4X SULTAN</h3>
+      <div class="role">Fragger</div>
+      <div class="player-click-hint"><span>VIEW PROFILE</span><span>⌄</span></div>
+    </div>
+  </summary>
+  <div class="player-profile">
+    <h4>PLAYER PROFILE</h4>
+    <p class="profile-role">Fragger · Attacking Role</p>
+    <p>Focused on offensive engagements and helping the squad create opportunities during fights.</p>
+    <span class="profile-stat-label">PUBG MOBILE</span>
+    <span class="profile-stat-label">FRAGGER</span>
+  </div>
+</details>
+
+<details class="player expand-player">
+  <summary>
+    <div class="player-top">
+      <span>PLAYER 03 / 06</span><span class="badge">UTILITY</span>
+    </div>
+    <img class="player-photo" src="vip.png" alt="NT4X VIP" loading="lazy">
+    <div class="player-card-info">
+      <h3>NT4X VIP</h3>
+      <div class="role">Support</div>
+      <div class="player-click-hint"><span>VIEW PROFILE</span><span>⌄</span></div>
+    </div>
+  </summary>
+  <div class="player-profile">
+    <h4>PLAYER PROFILE</h4>
+    <p class="profile-role">Support · Team Utility</p>
+    <p>Supports the squad through teamwork, utility coordination and helping teammates during engagements.</p>
+    <span class="profile-stat-label">PUBG MOBILE</span>
+    <span class="profile-stat-label">SUPPORT</span>
+  </div>
+</details>
+
+<details class="player expand-player">
+  <summary>
+    <div class="player-top">
+      <span>PLAYER 04 / 06</span><span class="badge">ATTACK</span>
+    </div>
+    <img class="player-photo" src="kasier.png" alt="NT4X KASIER" loading="lazy">
+    <div class="player-card-info">
+      <h3>NT4X KASIER</h3>
+      <div class="role">Fragger</div>
+      <div class="player-click-hint"><span>VIEW PROFILE</span><span>⌄</span></div>
+    </div>
+  </summary>
+  <div class="player-profile">
+    <h4>PLAYER PROFILE</h4>
+    <p class="profile-role">Fragger · Attacking Role</p>
+    <p>Plays an attacking role, contributing to the squad's pressure and team fights.</p>
+    <span class="profile-stat-label">PUBG MOBILE</span>
+    <span class="profile-stat-label">FRAGGER</span>
+  </div>
+</details>
+
+<details class="player expand-player">
+  <summary>
+    <div class="player-top">
+      <span>PLAYER 05 / 06</span><span class="badge">ATTACK</span>
+    </div>
+    <img class="player-photo" src="eren.png" alt="NT4X EREN" loading="lazy">
+    <div class="player-card-info">
+      <h3>NT4X EREN</h3>
+      <div class="role">Fragger</div>
+      <div class="player-click-hint"><span>VIEW PROFILE</span><span>⌄</span></div>
+    </div>
+  </summary>
+  <div class="player-profile">
+    <h4>PLAYER PROFILE</h4>
+    <p class="profile-role">Fragger · Attacking Role</p>
+    <p>Contributes to offensive plays and works with teammates to challenge opposing squads.</p>
+    <span class="profile-stat-label">PUBG MOBILE</span>
+    <span class="profile-stat-label">FRAGGER</span>
+  </div>
+</details>
+
+<details class="player expand-player">
+  <summary>
+    <div class="player-top">
+      <span>PLAYER 06 / 06</span><span class="badge">ATTACK</span>
+    </div>
+    <img class="player-photo" src="jangi.png" alt="NT4X JANGI" loading="lazy">
+    <div class="player-card-info">
+      <h3>NT4X JANGI</h3>
+      <div class="role">Fragger</div>
+      <div class="player-click-hint"><span>VIEW PROFILE</span><span>⌄</span></div>
+    </div>
+  </summary>
+  <div class="player-profile">
+    <h4>PLAYER PROFILE</h4>
+    <p class="profile-role">Fragger · Attacking Role</p>
+    <p>Plays an attacking role and contributes to the team's offensive engagements.</p>
+    <span class="profile-stat-label">PUBG MOBILE</span>
+    <span class="profile-stat-label">FRAGGER</span>
+  </div>
+</details>
+
   </div>
  </div>
 </section>
